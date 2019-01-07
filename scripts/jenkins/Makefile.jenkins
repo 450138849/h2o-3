@@ -43,16 +43,16 @@ init-tests:
 	>.tests-py.txt
 
 lookup-automl-tests:
-	find h2o-r/tests -name '*automl*.R' -printf '%f\n' >>.tests-r.txt
-	find h2o-py/tests -name '*automl*.py' -printf '%f\n' >>.tests-py.txt
+	find h2o-r/tests -name '*automl*.R' -exec basename {} \; >>.tests-r.txt
+	find h2o-py/tests -name '*automl*.py' -exec basename {} \; >>.tests-py.txt
 
 lookup-hdfs-tests:
-	find h2o-r/tests/testdir_hdfs -name '*.R' -printf '%f\n' >>.tests-r.txt
-	find h2o-py/tests/testdir_hdfs -name '*.py' -printf '%f\n' >>.tests-py.txt
+	find h2o-r/tests/testdir_hdfs -name '*.R' -exec basename {} \; >>.tests-r.txt
+	find h2o-py/tests/testdir_hdfs -name '*.py' -exec basename {} \; >>.tests-py.txt
 
 lookup-demos-tests:
-	find h2o-r/tests/testdir_demos -name '*.R' -printf '%f\n' >>.tests-r.txt
-	find h2o-py/tests/testdir_demos -name '*.py' -printf '%f\n' >>.tests-py.txt
+	find h2o-r/tests/testdir_demos -name '*.R' -exec basename {} \; >>.tests-r.txt
+	find h2o-py/tests/testdir_demos -name '*.py' -exec basename {} \; >>.tests-py.txt
 
 
 test-py-smoke:
